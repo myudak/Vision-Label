@@ -1,0 +1,9 @@
+Windows Registry Editor Version 5.00
+
+[HKEY_CLASSES_ROOT\SystemFileAssociations\image\shell\Vision-Label]
+@="Rename with Vision-Label"
+"Icon"="R:\\Project\\Hacktoberfest\\PyRename\\src\\main.py\\img\\icon.ico"
+
+[HKEY_CLASSES_ROOT\SystemFileAssociations\image\shell\Vision-Label\command]
+@="cmd /c start \"\" \"R:\\Project\\Hacktoberfest\\PyRename\\env\\Scripts\\python.exe\" \"R:\\Project\\Hacktoberfest\\PyRename\\src\\main.py\" --path \"%1\""
+        
