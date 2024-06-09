@@ -1,3 +1,6 @@
+add_context_menu.reg
+
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]

@@ -82,6 +82,8 @@ Add the context menu entry by running:
 regedit add_context_menu.reg
 ```
 
+note: you may need to run `regedit` as an administrator.
+
 Now, you can right-click on any image and select `Rename with Gemini` to rename the image using the Gemini API.
 
 #### Remove the Context Menu Entry
