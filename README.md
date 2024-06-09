@@ -17,7 +17,7 @@ simply describe what is in the image, then rename the file to something understa
 
 <br/>
 
-![vision-labelGIF](https://github.com/myudak/Vision-Label/assets/69108782/a33453d7-54cc-4d15-bd77-a2130f3cd6e7)
+https://github.com/myudak/Vision-Label/assets/69108782/5878884a-e753-48c9-835b-59224fff9ce6
 
 
 ## Dependencies
