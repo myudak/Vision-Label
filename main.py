@@ -25,7 +25,7 @@ def main():
 
         python_exe_path = sys.executable.replace("\\", "\\\\")  
         main_py_path = os.path.abspath(__file__).replace("\\", "\\\\")
-        current_script_path = os.path.abspath(__file__).replace("\\", "\\\\")
+        current_script_path = os.path.dirname(os.path.abspath(__file__)).replace("\\", "\\\\")
 
         renamer.generate_reg_file(python_exe_path, main_py_path, current_script_path)
 
