@@ -15,10 +15,10 @@ simply describe what is in the image, then rename the file to something understa
   <a href="https://github.com/myudak/Vision-Label"><img alt="Github - myudak" src="https://img.shields.io/badge/GitHub-VisionLabel-181717?style=flat-square&logo=github"></a>
 </p>
 
-<br>
-<p align="center">
-<img width="720px" src="" alt=""></img>
-</p><br>
+<br/>
+
+![vision-labelGIF](https://github.com/myudak/Vision-Label/assets/69108782/a33453d7-54cc-4d15-bd77-a2130f3cd6e7)
+
 
 ## Dependencies
 
