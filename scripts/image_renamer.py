@@ -5,6 +5,7 @@ from PIL import Image
 import sys
 import winreg
 import ctypes
+import piexif
 
 # Colors
 GREEN_COLOR = "\033[92m" 
@@ -58,6 +59,7 @@ class ImageRenamer:
                 os.rename(file_path, new_file_path)
                 self.print_success_message(f"Renamed to: {new_file_path}")
                 # TODO update metadata function
+                self.update_image_metadata(new_file_path, title=new_name)
                 # self.update_image_metadata(new_file_path, title, subject, tags)
             except Exception as e:
                 print(f"Error renaming file: {e}")
@@ -112,4 +114,18 @@ class ImageRenamer:
                 if file.lower().endswith(self.image_extension):
                     file_path = os.path.join(root, file)
                     self.rename_image(file_path)
+    
+    def update_image_metadata(self, file_path, title="None", subject="None", tags="None"):
+        try:
+            img = Image.open(file_path)
+            exif_dict = piexif.load(img.info["exif"])
+
+            if title:
+                exif_dict["0th"][piexif.ImageIFD.ImageDescription] = title
+
+            exif_bytes = piexif.dump(exif_dict)
+            img.save(file_path, exif=exif_bytes)
+            print(f"{GREEN_COLOR}Metadata updated successfully.{RESET_COLOR}")
+        except Exception as e:
+            print(f"{RED_COLOR}Error updating metadata: {e}{RESET_COLOR}")
     
