@@ -19,12 +19,11 @@ simply describe what is in the image, then rename the file to something understa
 
 ![vision-labelGIF](https://github.com/myudak/Vision-Label/assets/69108782/a33453d7-54cc-4d15-bd77-a2130f3cd6e7)
 
-
 ## Dependencies
 
-- Python 3
-- google-generativeai
-- PIL
+- Python 3.x
+- Google-generativeai
+- PIL Library
 
 ## Setup
 
@@ -55,13 +54,19 @@ pip install -r requirements.txt
 You can rename an image by specifying the path to the image:
 
 ```bash
-python main.py --path path_to_image
+python main.py --file path_to_image
+```
+
+You can also rename all the image in a directory by specifying the path to the directory:
+
+```bash
+python main.py --directory path_to_directory
 ```
 
 **Example:**
 
 ```bash
-python main.py --path ./img/example.jpg
+python main.py --file ./img/example.jpg
 ```
 
 ### From the Windows Context Menu
