@@ -18,7 +18,7 @@ REG_FILE = "add_context_menu.reg"
 GEMINI_MODEL = "gemini-1.5-flash"
 APP_NAME = "Vision-Label"
 REG_PATH = "HKEY_CLASSES_ROOT\SystemFileAssociations\image\shell"
-IMAGE_EXTENSION = ('.png', '.jpg', '.jpeg', '.gif', '.bmp')
+IMAGE_EXTENSION = ('.png', '.jpg', '.jpeg', '.gif', '.bmp',"webp")
 
 class ImageRenamer:
     def __init__(self):
@@ -72,7 +72,7 @@ class ImageRenamer:
 "Icon"="{current_script_path}\\\img\\\icon.ico"
 
 [{self.reg_path}\{self.app_name}\\command]
-@="cmd /c start \\"\\" \\"{python_exe_path}\\" \\"{main_py_path}\\" --path \\"%1\\""
+@="cmd /c start \\"\\" \\"{python_exe_path}\\" \\"{main_py_path}\\" --file \\"%1\\""
         """
 
         with open(self.reg_file, "w") as reg_file:
