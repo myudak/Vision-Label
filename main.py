@@ -5,16 +5,22 @@ from scripts.image_renamer import ImageRenamer
 
 def main():
     parser = argparse.ArgumentParser(description="Rename an image file based on a generated name.")
-    parser.add_argument("--path",  type=str, help="Path to the image file to rename.")
-    parser.add_argument("--reg", action="store_true", help="Generate the registry file.")
-    parser.add_argument("--remove", action="store_true", help="Remove the registry entry.")
+    parser.add_argument("-d", "--directory", type=str, help="Path to the directory containing images to rename.")
+    parser.add_argument("-f","--file",  nargs='+', help="Path to the image file to rename.")
+    parser.add_argument("-rg","--reg", action="store_true", help="Generate the registry file.")
+    parser.add_argument("-rm","--remove", action="store_true", help="Remove the registry entry.")
 
     args = parser.parse_args()
     renamer = ImageRenamer()
 
-    if args.path:
-        print(f"The argument provided is: \nRename {args.path}")
-        renamer.rename_image(args.path)
+    if args.file:
+        for file_path in args.file:
+                print(f"The argument provided is: \n{file_path}")
+                renamer.rename_image(file_path)
+    
+    if args.directory:
+        print(f"Renaming all images in directory: {args.directory}")
+        renamer.rename_images_in_directory(args.directory)
     
     if args.remove:
         print(f"The argument provided is: Remove the registry entry.")

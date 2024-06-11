@@ -17,6 +17,7 @@ REG_FILE = "add_context_menu.reg"
 GEMINI_MODEL = "gemini-1.5-flash"
 APP_NAME = "Vision-Label"
 REG_PATH = "HKEY_CLASSES_ROOT\SystemFileAssociations\image\shell"
+IMAGE_EXTENSION = ('.png', '.jpg', '.jpeg', '.gif', '.bmp')
 
 class ImageRenamer:
     def __init__(self):
@@ -28,6 +29,7 @@ class ImageRenamer:
         self.model = genai.GenerativeModel(GEMINI_MODEL)
         self.app_name = APP_NAME
         self.reg_path = REG_PATH
+        self.image_extension = IMAGE_EXTENSION
 
         if not self.api_key:
             raise ValueError("Google API key not found in environment variables.")
@@ -103,3 +105,11 @@ class ImageRenamer:
                 self.print_error_message("Registry entry does not exist.")
         except Exception as e:
             self.print_error_message(f"Error removing registry entry: {e}")
+    
+    def rename_images_in_directory(self, directory_path):
+        for root, _, files in os.walk(directory_path):
+            for file in files:
+                if file.lower().endswith(self.image_extension):
+                    file_path = os.path.join(root, file)
+                    self.rename_image(file_path)
+    
