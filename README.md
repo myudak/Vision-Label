@@ -99,9 +99,9 @@ Add the context menu entry by running:
 regedit add_context_menu.reg
 ```
 
-note: you may need to run `regedit` as an administrator.
+note: you may need to run `regedit` as an administrator. Alternatively you can doube click the file to run it
 
-Now, you can right-click on any image and select `Rename with Gemini` to rename the image using the Gemini API.
+Now, you can right-click on any image and select `Rename with Vision-Label` to rename the image using the Gemini API.
 
 #### Remove the Context Menu Entry
 
@@ -117,14 +117,21 @@ python main.py --remove
 2. Images are sent to the Gemini API, where they are processed, and a caption is returned.
 3. Rename the files with a new name from the Gemini API.
 
+## Contributing
+
+Contributions are welcome! If you have any suggestions or improvements, feel free to open an issue or submit a pull request.
+
+## License
+
+This project is licensed under the GNU GENERAL PUBLIC LICENSE - see the [LICENSE](LICENSE) file for details.
+
 ## Disclaimer
 
-This application uploads images to Google servers for processing using the Gemini API. Use caution and avoid using personal images.
+This application uploads images to Google servers for processing using the Gemini API. Use caution and avoid using personal images. This tool is not affiliated with Google. The functionality is subject to change based on updates to the Gemini API or the terms of service of Google.
 
 ## Credits
 
 - Gemini API
 - Google AI Studio
-
 
 [DEMO]: https://github.com/myudak/Vision-Label/assets/69108782/5878884a-e753-48c9-835b-59224fff9ce6
